@@ -1,0 +1,36 @@
+body {
+  font-family: -apple-system, 'Noto Sans KR', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0%;
+  text-align: center;
+  background-color:rgb(21, 21, 21);
+}
+
+h1 {
+  font-size: 150px;
+  margin: 0;
+  color: white;
+}
+
+input{
+  border-radius: 10px;
+  height: 30px;
+  width: 150px;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 0;
+  background-color:rgb(225, 225, 225);
+  color: black;
+  font-weight: 700;
+}
+.submit {
+  size: 10px;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 0;
+}
+.error{
+  font-size: 50px;
+  color: white;
+  font-weight: 1000;
+}

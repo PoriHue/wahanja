@@ -4,7 +4,7 @@ import { ipcRenderer, Menu } from 'electron';
 const error = document.getElementById("error") as HTMLDivElement;
 const correct = document.getElementById("correct") as HTMLDivElement;
 const submit = document.getElementById("submit") as HTMLButtonElement;
-const file = document.getElementById("file") as HTMLButtonElement;
+const fileBtn = document.getElementById("file") as HTMLButtonElement;
 const hanjaString = document.getElementById("hanja") as HTMLHeadingElement
 const hunInput = document.getElementById("hun") as HTMLInputElement
 const meanInput = document.getElementById("mean") as HTMLInputElement
@@ -22,7 +22,7 @@ fileInput.accept='.whj'
 var errorCount:number = 0;
 
 
-file.addEventListener("click", (e) => {
+fileBtn.addEventListener("click", (e) => {
     e.preventDefault()
     fileInput.click()
 });
@@ -41,6 +41,8 @@ fileInput.addEventListener('change', (event: Event) => {
         if(hanja[0] != undefined){
             isLoad =true
             hanjaString.textContent = hanja[point][0];
+            fileBtn.disabled = true
+            fileBtn.style = "display: none;"
         }else{
             isLoad = false
             alert("불러오기 실패")
@@ -52,14 +54,18 @@ fileInput.addEventListener('change', (event: Event) => {
 const clickButton = () => {
     console.log(hanja)
     if(isLoad){
-        if(submitFun()){
-            console.log("a")
+        if(meanInput.value == "" || hunInput.value == "") return;
+        if(submitFun()){ 
             score++;
             correct.textContent = "CORRECT! : "+ score
-            if(hanja.length <= point)
+            
+            point++;
+            if(hanja.length <= point){
                 point = 0;
+            }
             hanjaString.textContent = hanja[point][0]
-            console.log(point)
+            meanInput.value = ""
+            hunInput.value = ""
         }else{
             errorCount++;
             error.textContent = "ERROR! : "+errorCount;

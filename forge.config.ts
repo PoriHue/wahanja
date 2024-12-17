@@ -13,6 +13,19 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  publishers: [{
+    name: '@electron-forge/publisher-bitbucket',
+      config: {
+        repository: {
+          owner: 'WariHue',
+          name: 'wahanja'
+        },
+        auth: {
+          username: "warihue", // string
+          appPassword: "wari2428" // string
+        }
+      }
+  }],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.

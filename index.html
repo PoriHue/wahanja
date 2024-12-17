@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>와! 한자! 알게되는구나!</title>
 
   </head>
   <body>
@@ -10,11 +13,13 @@
     <div class="error" id="correct">CORRECT! : 0</div>
     <div class="error" id="error">ERROR! : 0</div>
     <h1 id="hanja">思</h1>
-    <input type="text" id="hun" placeholder="훈을 입력하세요"/>
-    <br/>
-    <input type="text" id="mean" placeholder="음을 입력하세요"/>
-    <br/>
-    <button class="submit" id="submit">Submit</button>
+    <form method="post" action="src/renderer.ts">
+      <input type="text" id="hun" placeholder="훈을 입력하세요" required/>
+      <br/>
+      <input type="text" id="mean" placeholder="음을 입력하세요" required/>
+      <br>
+      <input type="submit" class="submit" id="submit" value="Submit" style="display: none;"/>
+    </form>
     <script type="module" src="/src/renderer.ts"></script>
   </body>
 </html>

@@ -3,7 +3,6 @@ import { MakerSquirrel } from '@electron-forge/maker-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
-import { MakerWix } from '@electron-forge/maker-wix';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
@@ -15,10 +14,8 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({
-    setupIcon: "./icon/icon.ico",
-  }), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({}),new MakerWix({
-    icon: "./icon/icon.ico",
-  }),],
+    setupIcon: "./images/icon.ico",
+  }), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
   publishers: [{
     name: '@electron-forge/publisher-bitbucket',
       config: {

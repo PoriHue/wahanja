@@ -6,8 +6,9 @@ const correct = document.getElementById("correct") as HTMLDivElement;
 const submit = document.getElementById("submit") as HTMLButtonElement;
 const fileBtn = document.getElementById("file") as HTMLButtonElement;
 const hanjaString = document.getElementById("hanja") as HTMLHeadingElement
-const hunInput = document.getElementById("hun") as HTMLInputElement
-const meanInput = document.getElementById("mean") as HTMLInputElement
+const hunInput = document.getElementById("hun") as HTMLInputElement;
+const meanInput = document.getElementById("mean") as HTMLInputElement;
+const clearStar = document.getElementById("clear") as HTMLImageElement;
 
 let isLoad = false;
 let point: number = 0;
@@ -70,6 +71,8 @@ const clickButton = () => {
             
             point++;
             if(hanja.length <= point){
+                clearStar.style = ""
+                hanja = shuffle(hanja);
                 point = 0;
             }
             hanjaString.textContent = hanja[point][0]

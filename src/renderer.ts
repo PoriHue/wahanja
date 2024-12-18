@@ -40,6 +40,7 @@ fileInput.addEventListener('change', (event: Event) => {
         }
         if(hanja[0] != undefined){
             isLoad =true
+            hanja = shuffle(hanja);
             hanjaString.textContent = hanja[point][0];
             fileBtn.disabled = true
             fileBtn.style = "display: none;"
@@ -50,6 +51,14 @@ fileInput.addEventListener('change', (event: Event) => {
     };
     reader.readAsText(file);
 })
+
+const shuffle = (array: string[][]):string[][] => {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+}
 
 const clickButton = () => {
     console.log(hanja)

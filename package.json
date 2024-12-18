@@ -1,8 +1,8 @@
 {
   "name": "wahanja",
   "productName": "wahanja",
-  "version": "1.1.0",
-  "description": "My Electron application description",
+  "version": "1.1.1",
+  "description": "와! 샌즈! 아시는구나!",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -41,6 +41,7 @@
   "author": "Find_",
   "license": "MIT",
   "dependencies": {
+    "@electron-forge/maker-wix": "^7.6.0",
     "@electron-forge/shared-types": "^7.6.0",
     "electron-squirrel-startup": "^1.0.1"
   }

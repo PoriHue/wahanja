@@ -10,9 +10,25 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    icon: "images/icon.ico"
   },
   rebuildConfig: {},
-  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  makers: [new MakerSquirrel({
+    setupIcon: "./images/icon.ico",
+  }), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  publishers: [{
+    name: '@electron-forge/publisher-bitbucket',
+      config: {
+        repository: {
+          owner: 'WariHue',
+          name: 'wahanja'
+        },
+        auth: {
+          username: "warihue", // string
+          appPassword: "wari2428" // string
+        }
+      }
+  }],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.

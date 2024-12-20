@@ -1,5 +1,5 @@
 body {
-  font-family: -apple-system, 'Noto Sans KR', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, 'Noto Sans JP', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0%;
   text-align: center;
   background-color:rgb(21, 21, 21);
@@ -9,6 +9,9 @@ h1 {
   font-size: 150px;
   margin: 0;
   color: white;
+}
+.clear{
+  margin-top: 10px;
 }
 
 input{
@@ -32,5 +35,5 @@ input{
 .error{
   font-size: 50px;
   color: white;
-  font-weight: 1000;
+  font-weight: 900;
 }

@@ -14,8 +14,9 @@ var filePath = 1
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 350,
-    height: 500,
+    width: 450,
+    height: 600,
+    icon: "images/icon.ico",
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -23,7 +24,7 @@ const createWindow = () => {
 
   const menu = Menu.buildFromTemplate([
   ]);
-  // Menu.setApplicationMenu(menu);
+  Menu.setApplicationMenu(menu);
 
   // and load the index.html of the app.
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
